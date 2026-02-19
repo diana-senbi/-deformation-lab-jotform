@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мұғалім бөлімі</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">👩‍🏫</div>
+      <div>
+        <h1>Мұғалім бөлімі</h1>
+        <p class="sub">Оқушы жіберген нәтижені ашып көру</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">← Басты бет</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Нәтиже файлын ашу</h2>
+      <p class="muted">
+        Оқушы “Экспорт (JSON)” жасағанда файл жүктеледі.
+        Сол файлды апай осы жерге жүктеп, нәтижені көреді.
+      </p>
+
+      <input type="file" id="teacherFile" accept=".json"/>
+
+      <div id="teacherView" class="teacher-view">
+        <p class="muted">Файл таңдасаң — нәтижесі осында шығады.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Неге “мұғалім логинмен кіріп бәрін көрсін” қиын?</h3>
+      <p class="muted">
+        GitHub Pages — статикалық хостинг, онда серверлік база/логин/мәлімет сақтау жоқ.
+        Сондықтан ең қарапайым әрі сенімді жол: <b>оқушы экспорттап жібереді</b>.
+        Қаласаң кейін Google Form арқылы автомат жинайтын қылып береміз.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Teacher • Viewer</span>
+  </footer>
+</body>
+</html>
