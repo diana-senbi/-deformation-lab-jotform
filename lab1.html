@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лаб №1 — Гук заңы</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">k</div>
+      <div>
+        <h1>Лаб №1: Гук заңы</h1>
+        <p class="sub">F = kx • k табу • F–x графигі</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">← Басты бет</a>
+      <a href="teacher.html">Мұғалім бөлімі</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Теория</h2>
+      <p><b>Гук заңы:</b> серпімді деформация кезінде серіппеге әсер ететін күш ұзаруға тура пропорционал:</p>
+      <div class="formula">F = kx</div>
+      <ul>
+        <li><b>F</b> — күш (Н)</li>
+        <li><b>x</b> — ұзару (м)</li>
+        <li><b>k</b> — серіппе қатаңдығы (Н/м)</li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn" data-scroll="#startLab">Лабораторияны бастау</button>
+      </div>
+    </section>
+
+    <section id="startLab" class="card">
+      <h2>2) Виртуалды жұмыс (PhET)</h2>
+
+      <div class="two-col">
+        <div>
+          <p class="muted">
+            Төмендегі симуляциядан күш пен ұзаруды бақыла.
+            Егер ашылмаса — “Жаңа бетте ашу” батырмасын бас.
+          </p>
+
+          <div class="actions">
+            <a class="btn outline" target="_blank" rel="noopener"
+               href="https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html">PhET — жаңа бетте ашу</a>
+          </div>
+        </div>
+
+        <div class="embed">
+          <!-- PhET iframe тест беті бар, iframe-ге рұқсат етілетінін көрсетеді -->
+          <iframe
+            title="PhET Hooke's Law"
+            src="https://phet.colorado.edu/sims/html/hookes-law/latest/hookes-law_all.html"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <p class="muted small">
+        PhET симуляциясы браузерде iframe арқылы ашылатын нұсқасы бар. :contentReference[oaicite:0]{index=0}
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3) Өлшеу кестесі (автоматты есептеу)</h2>
+
+      <div class="student-row">
+        <label>Оқушы аты-жөні:
+          <input id="studentName1" type="text" placeholder="Мысалы: Диана" />
+        </label>
+        <label>Сынып:
+          <input id="studentClass1" type="text" placeholder="Мысалы: 9А" />
+        </label>
+      </div>
+
+      <div class="table-wrap">
+        <table class="tbl" id="hookeTable">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>F (Н)</th>
+              <th>x (м)</th>
+              <th>k = F/x (Н/м)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- 5 жол -->
+            <tr><td>1</td><td><input class="F" type="number" step="0.01"></td><td><input class="x" type="number" step="0.001"></td><td class="kcell">—</td></tr>
+            <tr><td>2</td><td><input class="F" type="number" step="0.01"></td><td><input class="x" type="number" step="0.001"></td><td class="kcell">—</td></tr>
+            <tr><td>3</td><td><input class="F" type="number" step="0.01"></td><td><input class="x" type="number" step="0.001"></td><td class="kcell">—</td></tr>
+            <tr><td>4</td><td><input class="F" type="number" step="0.01"></td><td><input class="x" type="number" step="0.001"></td><td class="kcell">—</td></tr>
+            <tr><td>5</td><td><input class="F" type="number" step="0.01"></td><td><input class="x" type="number" step="0.001"></td><td class="kcell">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-title">Орташа k</div>
+          <div class="stat-val" id="kAvg">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">График еңістігі (k, жуық)</div>
+          <div class="stat-val" id="kSlope">—</div>
+        </div>
+      </div>
+
+      <h3>4) График (F–x)</h3>
+      <canvas class="chart" id="hookeChart" width="900" height="420"></canvas>
+
+      <div class="note">
+        <b>Кеңес:</b> x = 0 болмауы керек, әйтпесе k есептелмейді.
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>5) Бақылау сұрақтары</h2>
+
+      <div class="qa">
+        <label>1) Гук заңы қандай шартта орындалады?
+          <textarea class="ans" data-q="q1"></textarea>
+        </label>
+        <label>2) k физикалық мағынасы қандай?
+          <textarea class="ans" data-q="q2"></textarea>
+        </label>
+        <label>3) Неге F артқанда x артады?
+          <textarea class="ans" data-q="q3"></textarea>
+        </label>
+        <label>4) Серпімділік шегінен асса не болады?
+          <textarea class="ans" data-q="q4"></textarea>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="exportLab1">Экспорт (JSON) — апайға жіберу</button>
+        <button class="btn outline" onclick="window.print()">PDF/Қағазға шығару (Print)</button>
+      </div>
+
+      <p class="muted small">
+        Экспорт жасағанда файл жүктеледі: оны Telegram/WhatsApp арқылы апайға жібере саласың.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Лаб №1 • Гук заңы</span>
+  </footer>
+</body>
+</html>
