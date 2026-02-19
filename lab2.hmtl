@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Лаб №2 — Юнг модулі</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">E</div>
+      <div>
+        <h1>Лаб №2: Юнг модулі</h1>
+        <p class="sub">σ = F/S • ε = Δl/l₀ • E = σ/ε • σ–ε графигі</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">← Басты бет</a>
+      <a href="teacher.html">Мұғалім бөлімі</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Теория</h2>
+      <ul>
+        <li><b>Кернеу:</b> σ = F/S (Па)</li>
+        <li><b>Салыстырмалы деформация:</b> ε = Δl / l₀</li>
+        <li><b>Юнг модулі:</b> E = σ/ε (Па)</li>
+      </ul>
+
+      <div class="actions">
+        <button class="btn" data-scroll="#startLab2">Лабораторияны бастау</button>
+      </div>
+    </section>
+
+    <section id="startLab2" class="card">
+      <h2>2) Виртуалды жұмыс (GeoGebra)</h2>
+      <p class="muted">
+        Төмендегі GeoGebra материалында σ–ε графигін көресің (көк нүктені жылжыт).
+        Ашылмаса — “Жаңа бетте ашу”.
+      </p>
+
+      <div class="actions">
+        <a class="btn outline" target="_blank" rel="noopener"
+           href="https://www.geogebra.org/m/AMjGYhNm">GeoGebra — жаңа бетте ашу</a>
+      </div>
+
+      <div class="embed">
+        <iframe
+          title="GeoGebra Stress-Strain"
+          src="https://www.geogebra.org/material/iframe/id/AMjGYhNm/width/900/height/460/border/888888/rc/false/ai/true/sdz/true/smb/false/stb/false/stbh/false/ld/false/sri/false/at/auto"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="muted small">
+        GeoGebra материалын iframe арқылы енгізу ресми түрде қолдайды. :contentReference[oaicite:1]{index=1}
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>3) Өлшеу және есептеу (σ, ε, E)</h2>
+
+      <div class="student-row">
+        <label>Оқушы аты-жөні:
+          <input id="studentName2" type="text" placeholder="Мысалы: Диана" />
+        </label>
+        <label>Сынып:
+          <input id="studentClass2" type="text" placeholder="Мысалы: 9А" />
+        </label>
+      </div>
+
+      <div class="note">
+        <b>Қалай енгіземіз?</b> GeoGebra-дан немесе берілген тапсырмадан 4–5 мән ал:
+        F, S, l₀, Δl. Сайт өзі σ, ε, E есептейді және σ–ε графигін сызады.
+      </div>
+
+      <div class="table-wrap">
+        <table class="tbl" id="youngTable">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>F (Н)</th>
+              <th>S (м²)</th>
+              <th>l₀ (м)</th>
+              <th>Δl (м)</th>
+              <th>σ = F/S (Па)</th>
+              <th>ε = Δl/l₀</th>
+              <th>E = σ/ε (Па)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input class="F2" type="number" step="0.01"></td>
+              <td><input class="S2" type="number" step="0.00000001" placeholder="0.0001"></td>
+              <td><input class="L02" type="number" step="0.001"></td>
+              <td><input class="dL2" type="number" step="0.001"></td>
+              <td class="sig">—</td><td class="eps">—</td><td class="E">—</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input class="F2" type="number" step="0.01"></td>
+              <td><input class="S2" type="number" step="0.00000001"></td>
+              <td><input class="L02" type="number" step="0.001"></td>
+              <td><input class="dL2" type="number" step="0.001"></td>
+              <td class="sig">—</td><td class="eps">—</td><td class="E">—</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input class="F2" type="number" step="0.01"></td>
+              <td><input class="S2" type="number" step="0.00000001"></td>
+              <td><input class="L02" type="number" step="0.001"></td>
+              <td><input class="dL2" type="number" step="0.001"></td>
+              <td class="sig">—</td><td class="eps">—</td><td class="E">—</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input class="F2" type="number" step="0.01"></td>
+              <td><input class="S2" type="number" step="0.00000001"></td>
+              <td><input class="L02" type="number" step="0.001"></td>
+              <td><input class="dL2" type="number" step="0.001"></td>
+              <td class="sig">—</td><td class="eps">—</td><td class="E">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-title">Орташа E</div>
+          <div class="stat-val" id="EAvg">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-title">График еңістігі (E, жуық)</div>
+          <div class="stat-val" id="ESlope">—</div>
+        </div>
+      </div>
+
+      <h3>4) График (σ–ε)</h3>
+      <canvas class="chart" id="youngChart" width="900" height="420"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>5) Бақылау сұрақтары</h2>
+      <div class="qa">
+        <label>1) Кернеу σ деген не? Өлшем бірлігі?
+          <textarea class="ans2" data-q="q1"></textarea>
+        </label>
+        <label>2) ε нені көрсетеді?
+          <textarea class="ans2" data-q="q2"></textarea>
+        </label>
+        <label>3) Юнг модулі E нені сипаттайды?
+          <textarea class="ans2" data-q="q3"></textarea>
+        </label>
+        <label>4) Серпімді және пластикалық деформация айырмасы?
+          <textarea class="ans2" data-q="q4"></textarea>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="exportLab2">Экспорт (JSON) — апайға жіберу</button>
+        <button class="btn outline" onclick="window.print()">PDF/Қағазға шығару (Print)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Лаб №2 • Юнг модулі</span>
+  </footer>
+</body>
+</html>
